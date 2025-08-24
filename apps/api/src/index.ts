@@ -10,7 +10,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/plantsdb";
 
-app.use(cors());
+app.use(cors({
+  origin: "https://urvann-assignment-ankit.vercel.app"
+}));
+
 app.use(express.json());
 
 // Connect to MongoDB
