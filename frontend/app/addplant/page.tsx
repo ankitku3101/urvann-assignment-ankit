@@ -7,11 +7,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { toast } from "react-hot-toast";
 
 const categoriesOptions = ["Indoor", "Outdoor", "Succulent", "Flowering"];
 
-export default function page() {
+export default function AddPlantPage() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [categories, setCategories] = useState<string[]>([]);
@@ -61,7 +60,7 @@ export default function page() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Something went wrong");
 
-      toast.success("Plant added successfully!");
+      // Reset form on success
       setName("");
       setPrice("");
       setCategories([]);
@@ -69,8 +68,11 @@ export default function page() {
       setImage("");
       setDescription("");
       setErrors({});
-    } catch (err: any) {
-      toast.error(err.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error(error.message);
+        // Optionally show toast: toast.error(error.message)
+      }
     }
 
     setLoading(false);
@@ -90,7 +92,7 @@ export default function page() {
       {/* Auth Notice */}
       <div className="w-full mb-4 text-center">
         <p className="text-sm text-red-600">
-          Ideally this route should be protected by auth and middlewares for admin. Couldn't implement due to time constraints.
+          Ideally this route should be protected by auth and middlewares for admin. Couldn&apos;t implement due to time constraints.
         </p>
       </div>
 
@@ -151,7 +153,7 @@ export default function page() {
           <div className="flex items-center space-x-2">
             <Checkbox
               checked={inStock}
-              onCheckedChange={(checked) => setInStock(!!checked)}
+              onCheckedChange={(checked: any) => setInStock(!!checked)}
             />
             <Label className="mb-1">In Stock</Label>
           </div>
