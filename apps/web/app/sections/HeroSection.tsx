@@ -72,7 +72,7 @@ const squareData: Square[] = [
   { id: 23, src: "https://www.urvann.com/s/6176774ef575bbd2b3331c8a/689db64b77b87b8e3ff188a3/img_8864-640x640.jpg" },
 ];
 
-const generateSquares = (): JSX.Element[] => {
+const generateSquares = (): React.ReactElement[] => {
   return shuffle(squareData).map((sq: Square) => (
     <motion.div
       key={sq.id}
