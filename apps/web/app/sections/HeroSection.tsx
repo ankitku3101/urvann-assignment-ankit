@@ -90,7 +90,7 @@ const generateSquares = (): React.ReactElement[] => {
 
 const ShuffleGrid = () => {
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const [squares, setSquares] = useState<JSX.Element[]>([]);
+  const [squares, setSquares] = useState<React.ReactElement[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
