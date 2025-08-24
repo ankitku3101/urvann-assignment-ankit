@@ -9,7 +9,7 @@ export const Navbar = () => {
   const navItems = ["Home", "Products", "Delivery", "Blog"];
 
   return (
-    <div className="text-sm text-white w-full">
+    <div className="text-sm text-white w-full sticky top-0 z-50">
       <div className="text-center font-medium py-2 bg-[#0c3e26] text-white text-xs md:text-sm">
         <p>
           Exclusive Price Drop! Hurry,{" "}
@@ -18,7 +18,6 @@ export const Navbar = () => {
       </div>
 
       <nav className="relative h-[70px] flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 bg-white text-gray-900 transition-all shadow">
-        {/* Logo + Brand */}
         <Link href="/" className="flex items-center space-x-2 text-2xl font-bold text-[#0c3e26] tracking-tight">
           <img src="/logo.png" alt="Urvann Logo" className="md:h-8 md:w-8 h-4 w-4" />
           <span>Urvann</span>
@@ -34,12 +33,10 @@ export const Navbar = () => {
           ))}
         </ul>
 
-        {/* Desktop Add Plant */}
         <Link href="/addplant" className="md:inline hidden bg-white hover:bg-gray-50 border border-gray-300 ml-20 px-9 py-2 rounded-full active:scale-95 transition-all text-center">
           Add Plant
         </Link>
 
-        {/* Mobile Menu Button */}
         <button
           aria-label="menu-btn"
           type="button"
@@ -51,7 +48,6 @@ export const Navbar = () => {
           </svg>
         </button>
 
-        {/* Mobile Menu */}
         {isMobileOpen && (
           <div className="mobile-menu absolute top-[70px] left-0 w-full bg-white shadow-sm p-6 md:hidden z-50">
             <ul className="flex flex-col space-y-4 text-lg">
@@ -68,7 +64,6 @@ export const Navbar = () => {
               ))}
             </ul>
 
-            {/* Mobile Add Plant */}
             <Link
               href="/addplant"
               className="bg-white text-gray-600 border border-gray-300 mt-6 text-sm hover:bg-gray-50 active:scale-95 transition-all w-40 h-11 rounded-full inline-flex items-center justify-center"

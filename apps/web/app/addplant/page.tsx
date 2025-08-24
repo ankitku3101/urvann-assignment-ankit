@@ -11,7 +11,7 @@ import { toast } from "react-hot-toast";
 
 const categoriesOptions = ["Indoor", "Outdoor", "Succulent", "Flowering"];
 
-export default function AddPlantPage() {
+export default function page() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [categories, setCategories] = useState<string[]>([]);

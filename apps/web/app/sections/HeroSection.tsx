@@ -1,5 +1,4 @@
 'use client';
-
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -11,7 +10,7 @@ interface Square {
 
 export const HeroSection = () => {
   return (
-    <div className="px-10 md:px-8">
+    <div id="home" className="px-10 md:px-8">
       <section className="w-full my-10 px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto bg-[#ddfed8] rounded-4xl">
         <div>
           <span className="block mb-4 text-xs md:text-sm text-[#0c3e26] font-medium">

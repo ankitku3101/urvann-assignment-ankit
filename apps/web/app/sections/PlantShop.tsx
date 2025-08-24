@@ -8,13 +8,13 @@ interface Plant {
   categories: string[];
   price: number;
   image: string;
-  inStock: boolean; // Added inStock
+  inStock: boolean; 
 }
 
 const categories = ["Indoor", "Outdoor", "Succulent", "Flowering"];
-const LIMIT = 12; // number of plants per fetch
+const LIMIT = 12;
 
-export default function PlantShop() {
+export const PlantShop = () => {
   const [plants, setPlants] = useState<Plant[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
